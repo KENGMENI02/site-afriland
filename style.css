@@ -1,0 +1,667 @@
+                        * {
+                            padding: 0;
+                            margin: 0;
+                            box-sizing: border-box;
+                        }
+                        
+                         :root {
+                            --speed: 15s;
+                        }
+                        /* TOP BAR */
+                        
+                        .top-bar {
+                            background: #222;
+                            /* noir foncé */
+                            color: #fff;
+                            width: 100%;
+                            padding: 8px 0;
+                            font-size: 14px;
+                        }
+                        
+                        .top-bar-content {
+                            width: 90%;
+                            margin: auto;
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                        }
+                        
+                        .top-links {
+                            display: flex;
+                            gap: 25px;
+                            list-style: none;
+                        }
+                        
+                        .top-links li a {
+                            color: #ffffff;
+                            text-decoration: none;
+                            transition: 0.3s ease;
+                        }
+                        
+                        .top-links li a:hover {
+                            text-decoration: underline;
+                            color: #e2001a;
+                            font-weight: 600;
+                        }
+                        
+                        .top-links li a.active {
+                            /* rouge permanent */
+                            text-decoration: none;
+                        }
+                        /* Icône hamburger cachée en desktop */
+                        
+                        .menu-burger {
+                            display: none;
+                            font-size: 24px;
+                            color: #ffffff;
+                            cursor: pointer;
+                            user-select: none;
+                        }
+                        /* ===== HEADER ===== */
+                        
+                        .header {
+                            width: 100%;
+                            background: #fff;
+                            padding: 12px 0;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+                        }
+                        
+                        .header-content {
+                            width: 90%;
+                            margin: auto;
+                            display: flex;
+                            justify-content: space-between;
+                            /* desktop: logo à gauche, nav à droite */
+                            align-items: center;
+                            gap: 20px;
+                        }
+                        /* Logo */
+                        
+                        .logo img {
+                            width: 150px;
+                            height: auto;
+                            display: block;
+                        }
+                        /* Navigation Desktop */
+                        
+                        .navbar {
+                            /* rien de spécial par défaut */
+                        }
+                        
+                        .nav-links {
+                            display: flex;
+                            gap: 35px;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            align-items: center;
+                        }
+                        
+                        .nav-links li a {
+                            color: #000;
+                            text-decoration: none;
+                            font-weight: 500;
+                            transition: 0.2s ease;
+                        }
+                        
+                        .nav-links li a:hover {
+                            color: #d00000;
+                            /* accent */
+                        }
+                        
+                        .online-bank {
+                            padding: 8px 14px;
+                            /* background: #e2001a; */
+                            color: #000 !important;
+                            border-radius: 4px;
+                            font-weight: 700;
+                        }
+                        /* Burger (hidden on desktop) */
+                        
+                        .burger-menu {
+                            display: none;
+                            font-size: 28px;
+                            background: transparent;
+                            border: none;
+                            cursor: pointer;
+                            user-select: none;
+                            color: #000;
+                            line-height: 1;
+                            padding: 6px;
+                        }
+                        
+                        .slider {
+                            position: relative;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 450px;
+                        }
+                        
+                        .slider .slides {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                        }
+                        
+                        .slider .slide {
+                            min-width: 100%;
+                            height: 100%;
+                            position: relative;
+                            display: none;
+                        }
+                        
+                        .slider .slide.active {
+                            display: block;
+                        }
+                        
+                        .slider img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        
+                        .slide-text {
+                            position: absolute;
+                            bottom: 40px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: rgba(255, 255, 255, 0.8);
+                            padding: 15px 30px;
+                            border-radius: 30px;
+                        }
+                        
+                        .slide-text h2 {
+                            font-size: 26px;
+                            font-weight: 700;
+                            color: #ff0000;
+                        }
+                        /* Flèches */
+                        
+                        .navigation .prev,
+                        .navigation .next {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 35px;
+                            background: rgba(0, 0, 0, 0.4);
+                            color: #fff;
+                            padding: 10px 18px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            transition: 0.3s;
+                        }
+                        
+                        .navigation .prev:hover,
+                        .navigation .next:hover {
+                            background: #ff0000;
+                        }
+                        
+                        .navigation .prev {
+                            left: 20px;
+                        }
+                        
+                        .navigation .next {
+                            right: 20px;
+                        }
+                        /* Indicateurs (petits ronds) */
+                        
+                        .dots {
+                            position: absolute;
+                            bottom: 15px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            display: flex;
+                            gap: 8px;
+                        }
+                        
+                        .dots div {
+                            width: 12px;
+                            height: 12px;
+                            background: #c4c4c4;
+                            border-radius: 50%;
+                            cursor: pointer;
+                        }
+                        
+                        .dots .active {
+                            background: #ff0000;
+                        }
+                        
+                        .mini-cards {
+                            width: 90%;
+                            margin: 60px auto;
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 25px;
+                            align-items: stretch;
+                            flex-wrap: wrap;
+                        }
+                        /* carte générique */
+                        
+                        .mini-cards .card {
+                            background: #fff;
+                            border-radius: 14px;
+                            padding: 18px;
+                            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+                            width: calc((100% - 50px) / 3);
+                            /* 3 en ligne */
+                            box-sizing: border-box;
+                            transition: transform .25s ease, box-shadow .25s ease;
+                        }
+                        
+                        .mini-cards .card:hover {
+                            transform: translateY(-8px);
+                            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+                        }
+                        /* images des cartes 2 et 3 */
+                        
+                        .mini-cards .card img {
+                            width: 100%;
+                            height: 150px;
+                            object-fit: cover;
+                            border-radius: 10px;
+                        }
+                        /* titre */
+                        
+                        .mini-cards .card h3 {
+                            margin: 12px 0 8px;
+                            font-size: 18px;
+                            color: #ce0000;
+                            /* couleur banque */
+                            font-weight: 700;
+                        }
+                        /* texte */
+                        
+                        .mini-cards .card p {
+                            color: #444;
+                            font-size: 14px;
+                            line-height: 1.35;
+                            margin: 0 0 12px;
+                        }
+                        /* bouton */
+                        
+                        .mini-cards .card a,
+                        .mini-cards .card .card-cta {
+                            display: inline-block;
+                            padding: 8px 16px;
+                            border-radius: 24px;
+                            background: #ce0000;
+                            color: #fff;
+                            text-decoration: none;
+                            font-size: 14px;
+                        }
+                        /* ----- carte Canaux digitaux: liste icône + texte ----- */
+                        
+                        .card-channels .features {
+                            list-style: none;
+                            padding: 0;
+                            margin: 6px 0 14px;
+                        }
+                        
+                        .card-channels .features li {
+                            display: flex;
+                            gap: 12px;
+                            align-items: center;
+                            padding: 10px 6px;
+                            border-radius: 8px;
+                        }
+                        /* icône */
+                        
+                        .card-channels .icon {
+                            width: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 8px;
+                            background: rgba(206, 0, 0, 0.08);
+                            color: #ce0000;
+                            /* color of svg stroke/fill */
+                        }
+                        /* texte à côté */
+                        
+                        .card-channels .ftxt strong {
+                            display: block;
+                            font-size: 15px;
+                            color: #222;
+                        }
+                        
+                        .card-channels .ftxt p {
+                            margin: 3px 0 0;
+                            font-size: 13px;
+                            color: #666;
+                            line-height: 1.2;
+                        }
+                        /* adaptivité interne : laisser texte sur deux lignes si besoin */
+                        
+                        .card-channels .features li .ftxt {
+                            flex: 1 1 auto;
+                        }
+                        
+                        .sara-section {
+                            width: 90%;
+                            margin: 60px auto;
+                        }
+                        
+                        .sara-container {
+                            display: flex;
+                            align-items: center;
+                            gap: 40px;
+                            background: #ffffff;
+                            padding: 40px 35px;
+                            border-radius: 20px;
+                            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.09);
+                            border: 1px solid #eee;
+                        }
+                        
+                        .sara-img img {
+                            width: 320px;
+                            max-width: 100%;
+                            border-radius: 12px;
+                        }
+                        
+                        .sara-text h2 {
+                            font-size: 32px;
+                            font-weight: 800;
+                            color: #D20000;
+                            /* rouge Afriland */
+                            margin-bottom: 18px;
+                        }
+                        
+                        .sara-text p {
+                            font-size: 17px;
+                            color: #333;
+                            max-width: 500px;
+                            line-height: 1.45;
+                        }
+                        
+                        .sara-buttons {
+                            margin-top: 20px;
+                            display: flex;
+                            gap: 15px;
+                            flex-wrap: wrap;
+                            border-radius: 4%;
+                        }
+                        
+                        .sara-buttons a {
+                            text-decoration: none;
+                            color: black;
+                        }
+                        
+                        .sara-buttons img {
+                            height: 58px;
+                            width: auto;
+                            cursor: pointer;
+                            transition: 0.3s;
+                        }
+                        
+                        .sara-buttons img:hover {
+                            transform: scale(1.07);
+                        }
+                        
+                        .sara-galeri {
+                            width: 90%;
+                            margin: 60px auto;
+                        }
+                        
+                        .galerie-contenair {
+                            /* display: flex;
+                            align-items: center;
+                            gap: 40px; */
+                            background: #ffffff;
+                            padding: 40px 35px;
+                            border-radius: 20px;
+                            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.09);
+                            border: 1px solid #eee;
+                        }
+                        
+                        .galerie-content {
+                            display: flex;
+                            align-items: center;
+                            gap: 40px;
+                            /* background: #ffffff; */
+                            padding: 40px 35px;
+                            /* border-radius: 20px; */
+                            /* box-shadow: 0 3px 15px rgba(0, 0, 0, 0.09); */
+                            /* border: 1px solid #eee; */
+                        }
+                        
+                        .galerie-text h2 {
+                            font-size: 32px;
+                            font-weight: 800;
+                            color: #000;
+                        }
+                        
+                        .galerie-text p {
+                            font-size: 17px;
+                            color: #333;
+                            max-width: 500px;
+                            line-height: 1.45;
+                        }
+                        
+                        .galerie-left {
+                            width: 50%;
+                        }
+                        
+                        .galerie-right {
+                            width: 50%;
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            grid-template-rows: repeat(4, 1fr);
+                        }
+                        
+                        .marquee {
+                            background: #e60000;
+                            color: #fff;
+                            width: 100%;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            box-sizing: border-box;
+                            padding: 10px 0;
+                            font-weight: 600;
+                            font-size: 1rem;
+                            position: relative;
+                        }
+                        
+                        .marquee__inner {
+                            display: inline-block;
+                            padding-left: 100%;
+                            animation: scroll var(--speed) linear infinite;
+                        }
+                        
+                        @keyframes scroll {
+                            from {
+                                transform: translateX(0);
+                            }
+                            to {
+                                transform: translateX(-100%);
+                            }
+                            /* pause au survol */
+                        }
+                        
+                        .savoirplus {
+                            background: #ffffff;
+                            padding: 40px 35px;
+                        }
+                        
+                        .savoir-container {
+                            display: flex;
+                            justify-content: center;
+                            gap: 100px;
+                        }
+                        
+                        .savoir1 {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        
+                        .savoir1 a {}
+                        /* Responsive : les cartes empilées sous 900px */
+                        /* encore plus petit écran */
+                        
+                        @media screen and (max-width: 480px) {
+                            .card-channels .icon {
+                                width: 32px;
+                                height: 32px;
+                                min-width: 32px;
+                            }
+                            .card-channels .ftxt strong {
+                                font-size: 13px;
+                            }
+                            .card-channels .ftxt p {
+                                font-size: 12px;
+                            }
+                            .mini-cards .card img {
+                                height: 150px;
+                            }
+                            .sara-img img {
+                                width: 200px;
+                            }
+                            .sara-text h2 {
+                                font-size: 22px;
+                            }
+                            .sara-buttons img {
+                                height: 50px;
+                            }
+                        }
+                        /* ==================== RESPONSIVE ==================== */
+                        /* Pour écrans très petits */
+                        
+                        @media (max-width: 600px) {
+                            .logo img {
+                                width: 120px;
+                            }
+                            .burger-menu {
+                                font-size: 24px;
+                            }
+                            .slider {
+                                height: 220px;
+                            }
+                            .slide-text {
+                                bottom: 18px;
+                                padding: 6px 14px;
+                            }
+                            .slide-text h2 {
+                                font-size: 13px;
+                                line-height: 1.3;
+                                text-align: center;
+                            }
+                            .navigation .prev,
+                            .navigation .next {
+                                font-size: 18px;
+                                padding: 5px 8px;
+                            }
+                            .dots div {
+                                width: 7px;
+                                height: 7px;
+                            }
+                        }
+                        /* ----------- RESPONSIVE --------------- */
+                        
+                        @media screen and (max-width: 768px) {
+                            .top-links {
+                                display: none;
+                                /* on cache les liens en mobile */
+                            }
+                            .menu-burger {
+                                display: block;
+                                /* on affiche les 3 barres */
+                            }
+                            .top-bar-content {
+                                justify-content: flex-end;
+                            }
+                            .header-content {
+                                /* stack vertically: logo on top, then burger/nav */
+                                flex-direction: column;
+                                align-items: center;
+                                /* centre la colonne */
+                                justify-content: center;
+                                gap: 10px;
+                                padding: 8px 0;
+                            }
+                            /* Cache la navigation horizontale (les liens) */
+                            .nav-links {
+                                display: none;
+                            }
+                            /* Affiche le burger sous le logo */
+                            .burger-menu {
+                                display: block;
+                            }
+                            /* Optionnel : réduit la taille du logo */
+                            .logo img {
+                                width: 140px;
+                            }
+                            .burger-mobile-content {
+                                background: #222;
+                            }
+                            .slider {
+                                height: 280px;
+                                /* réduit la hauteur (avant 300-450px) */
+                            }
+                            .slide-text {
+                                bottom: 25px;
+                                padding: 8px 18px;
+                                /* plus petit */
+                                border-radius: 20px;
+                            }
+                            .slide-text h2 {
+                                font-size: 16px;
+                                /* Réduction du texte */
+                                font-weight: 600;
+                            }
+                            .navigation .prev,
+                            .navigation .next {
+                                font-size: 22px;
+                                padding: 6px 10px;
+                            }
+                            .dots {
+                                bottom: 8px;
+                                gap: 5px;
+                            }
+                            .dots div {
+                                width: 8px;
+                                height: 8px;
+                            }
+                            .mini-cards {
+                                flex-direction: column;
+                                gap: 26px;
+                            }
+                            .mini-cards .card {
+                                width: 100%;
+                            }
+                            .mini-cards .card img {
+                                height: 180px;
+                            }
+                            /* réduire icônes et texte dans la carte canaux */
+                            .card-channels .icon {
+                                width: 36px;
+                                height: 36px;
+                                min-width: 36px;
+                            }
+                            .card-channels .ftxt strong {
+                                font-size: 14px;
+                            }
+                            .card-channels .ftxt p {
+                                font-size: 12px;
+                            }
+                            .sara-container {
+                                flex-direction: column;
+                                text-align: center;
+                                gap: 25px;
+                                padding: 30px 20px;
+                            }
+                            .sara-text h2 {
+                                font-size: 26px;
+                            }
+                            .sara-text p {
+                                font-size: 15px;
+                                margin: 0 auto;
+                            }
+                            .sara-buttons {
+                                justify-content: center;
+                            }
+                            .sara-img img {
+                                width: 250px;
+                            }
+                        }
+                        /* encore plus petit téléphone */
